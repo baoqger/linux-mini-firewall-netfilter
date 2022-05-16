@@ -27,6 +27,7 @@ __attribute__((section("__versions"))) = {
 	{ 0x915f13b5, __VMLINUX_SYMBOL_STR(nf_unregister_net_hook) },
 	{ 0x641c180a, __VMLINUX_SYMBOL_STR(nf_register_net_hook) },
 	{ 0x684e375d, __VMLINUX_SYMBOL_STR(init_net) },
+	{ 0x91715312, __VMLINUX_SYMBOL_STR(sprintf) },
 	{ 0xd7b64983, __VMLINUX_SYMBOL_STR(kmem_cache_alloc_trace) },
 	{ 0x59acc80d, __VMLINUX_SYMBOL_STR(kmalloc_caches) },
 	{ 0x27e1a049, __VMLINUX_SYMBOL_STR(printk) },
@@ -39,4 +40,4 @@ __attribute__((section(".modinfo"))) =
 "depends=";
 
 
-MODULE_INFO(srcversion, "1894B531E38051EC7BA5EA5");
+MODULE_INFO(srcversion, "DE6C7C0D94FBCD14683292A");
