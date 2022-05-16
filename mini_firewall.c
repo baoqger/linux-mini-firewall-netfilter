@@ -7,7 +7,30 @@
 #include <linux/tcp.h>
 #include <linux/udp.h>
 
+#define IPADDRESS(addr) \
+	((unsigned char *)&addr)[3], \
+	((unsigned char *)&addr)[2], \
+	((unsigned char *)&addr)[1], \
+	((unsigned char *)&addr)[0]
+
 static struct nf_hook_ops *nf_blockicmppkt_ops = NULL;
+static struct nf_hook_ops *nf_blockipaddr_ops = NULL;
+
+
+static unsigned int nf_blockipaddr_handler(void *priv, struct sk_buff *skb, const struct nf_hook_state *state)
+{
+	u32 sip;
+	if(skb) {
+		struct sk_buff *sb = NULL;
+		struct iphdr *iph;
+
+		sb = skb;
+		iph = ip_hdr(sb);
+		sip = ntohl(iph->saddr);
+		
+	}
+}
+
 
 static unsigned int nf_blockicmppkt_handler(void *priv, struct sk_buff *skb, const struct nf_hook_state *state)
 {
